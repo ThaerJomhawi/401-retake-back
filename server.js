@@ -49,7 +49,7 @@ function SeedUserData() {
   console.log(thaer);
 }
 
-SeedUserData();
+// SeedUserData();
 
 function home(req, res) {
   res.send("Hello retaker");
@@ -57,7 +57,7 @@ function home(req, res) {
 
 function getApiData(req, res) {
   let apiUrl = process.env.API_URL;
-  axios.get(apiURl).then((result) => {
+  axios.get(apiUrl).then((result) => {
     res.send(result.data.fruits);
   });
 }
@@ -107,8 +107,8 @@ function updateFav(req, res) {
 
 server.get("/", home);
 server.get("/retrieve",getApiData);
-server.get("/fav-lis/:email",getFav)
-server.post('create/:email',creatFav)
+server.get("/fav-list/:email",getFav)
+server.post('/create/:email',creatFav)
 server.delete('/delete/:email/:id',deleteFav)
 server.put('/update/:email/:id',updateFav)
 server.listen(PORT, () => {
