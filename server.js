@@ -15,10 +15,12 @@ server.use(express.json());
 const mongoose = require("mongoose");
 const PORT = process.env.PORT;
 
-mongoose.connect(
-  "mongodb+srv://Cyclones:qo9RlYwKjvSc1FIO@cluster0.amjwr.mongodb.net/retake?retryWrites=true&w=majority",
-  { useNewUrlParser: true, useUnifiedTopology: true }
-);
+// mongoose.connect(
+//   "mongodb+srv://Cyclones:qo9RlYwKjvSc1FIO@cluster0.amjwr.mongodb.net/retake?retryWrites=true&w=majority",
+//   { useNewUrlParser: true, useUnifiedTopology: true }
+// );
+
+mongoose.connect('mongodb://localhost:27017/retaker', {useNewUrlParser: true, useUnifiedTopology: true});
 
 const fruitSchema = new mongoose.Schema({
   name: String,
